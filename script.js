@@ -12,7 +12,7 @@ gift.addEventListener("click", () =>{
             video.play();
             video.addEventListener("ended", () =>{
                 gift.classList.remove("opened");
-                img.classList.remove("opened");
+                //img.classList.remove("opened");
                 cooldown = false;
             });
         }, 1000);
