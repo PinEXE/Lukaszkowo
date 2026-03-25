@@ -3,7 +3,8 @@ let cooldown = false;
 Array.from(gifts).forEach(gift =>{
 gift.addEventListener("click", () =>{
     if (!cooldown) {
-        const img = gift.querySelector("img")
+        cooldown = true;
+        const img = gift.querySelector("img");
         gift.classList.add("opened");
         img.classList.add("opened");
         setTimeout(() => {
@@ -12,6 +13,7 @@ gift.addEventListener("click", () =>{
             video.addEventListener("ended", () =>{
                 gift.classList.remove("opened");
                 img.classList.remove("opened");
+                cooldown = false;
             });
         }, 1000);
 
